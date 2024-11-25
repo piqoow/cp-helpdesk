@@ -39,7 +39,7 @@ class DataChangeEmailNotification extends Notification
             ->line("Brief description: ".Str::limit($this->ticket->content, 200))
             ->action('View full ticket', route('admin.tickets.show', $this->ticket->id))
             ->line('Thank you')
-            ->line(config('app.name') . ' Team')
+            ->line(config(' ') . 'Pt. Centre Park Team')
             ->salutation(' ');
     }
 }

@@ -44,7 +44,8 @@
                             <span class="input-group-text"><i class="fa fa-lock"></i></span>
                         </div>
 
-                        <input id="password" name="password" type="password" class="form-control{{ $errors->has('password') ? ' is-invalid' : '' }}" required placeholder="{{ trans('global.login_password') }}">
+                        <input id="password" name="password" type="password"
+                         class="form-control{{ $errors->has('password') ? ' is-invalid' : '' }}" required placeholder="{{ trans('global.login_password') }}">
 
                         @if($errors->has('password'))
                             <div class="invalid-feedback">

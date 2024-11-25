@@ -34,7 +34,7 @@ class UsersTableSeeder extends Seeder
                 'name'           => 'Agent 3',
                 'email'          => 'agent3@agent3.com',
                 'password'       => '$2y$10$UnLIBQB1uZZC1r5msFWTPuZCZsMBUpZINpJ48G5FmMxz6yVGP83rO',
-                'remember_token' => null,
+                'remember_token' => null,   
             ],
         ];
 

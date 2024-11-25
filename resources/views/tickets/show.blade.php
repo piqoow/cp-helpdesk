@@ -10,10 +10,6 @@
                 </div>
             @endif
             <div class="card">
-                <div class="card-header">Id Ticket #{{ $ticket->id }}</div>
-
-                <div class="card-body">
-                    <table class="table table-bordered table-striped">
                         <tbody>
                             <tr>
                                 <th>

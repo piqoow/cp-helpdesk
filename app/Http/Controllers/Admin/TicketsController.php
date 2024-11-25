@@ -73,6 +73,9 @@ class TicketsController extends Controller
             $table->addColumn('category_color', function ($row) {
                 return $row->category ? $row->category->color : '#000000';
             });
+            $table->editColumn('updated_at', function ($row) {
+                return $row->updated_at ? $row->updated_at : "";
+            });
 
             $table->editColumn('author_name', function ($row) {
                 return $row->author_name ? $row->author_name : "";
@@ -98,6 +101,7 @@ class TicketsController extends Controller
         }
 
         $priorities = Priority::all();
+        
         $statuses = Status::all();
         $categories = Category::all();
 

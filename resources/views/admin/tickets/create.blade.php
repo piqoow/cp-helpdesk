@@ -101,7 +101,7 @@
                 </p>
             </div>
             <div class="form-group {{ $errors->has('author_email') ? 'has-error' : '' }}">
-                <label for="author_email">{{ trans('Report Name') }}</label>
+                <label for="author_email">{{ trans('Report Email') }}</label>
                 <input type="text" id="author_email" name="author_email" class="form-control" value="{{ old('author_email', isset($ticket) ? $ticket->author_email : '') }}">
                 @if($errors->has('author_email'))
                     <em class="invalid-feedback">

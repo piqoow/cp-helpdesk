@@ -1,4 +1,4 @@
-@extends('layouts.editt')
+@extends('layouts.admin')
 @section('content')
 
 <div class="card">
@@ -11,7 +11,7 @@
             @csrf
             @method('PUT')
             <div class="form-group {{ $errors->has('title') ? 'has-error' : '' }}">
-                <label for="title">{{ trans('No Tlp') }}</label>
+                <label for="title">{{ trans('Title') }}</label>
                 <input type="text" id="title" name="title" class="form-control" value="{{ old('title', isset($ticket) ? $ticket->title : '') }}" required>
                 @if($errors->has('title'))
                     <em class="invalid-feedback">
@@ -114,7 +114,7 @@
             </div>
             @if(auth()->user()->isAdmin())
                 <div class="form-group {{ $errors->has('assigned_to_user_id') ? 'has-error' : '' }}">
-                    <label for="assigned_to_user">{{ trans('Select Techinician') }}</label>
+                    <label for="assigned_to_user">{{ trans('Select Devision') }}</label>
                     <select name="assigned_to_user_id" id="assigned_to_user" class="form-control select2">
                         @foreach($assigned_to_users as $id => $assigned_to_user)
                             <option value="{{ $id }}" {{ (isset($ticket) && $ticket->assigned_to_user ? $ticket->assigned_to_user->id : old('assigned_to_user_id')) == $id ? 'selected' : '' }}>{{ $assigned_to_user }}</option>
@@ -128,7 +128,7 @@
                 </div>
             @endif
             <div>
-                <input class="btn btn-danger" type="submit" value="{{ trans('Simpan') }}">
+                <input class="btn btn-danger" type="submit" value="{{ trans('Save') }}">
             </div>
         </form>
 

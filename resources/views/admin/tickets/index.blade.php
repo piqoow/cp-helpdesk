@@ -28,13 +28,22 @@
                         {{ trans('Title') }}
                     </th>
                     <th>
-                        {{ trans('cruds.ticket.fields.status') }}
+                        {{ trans('Status') }}
                     </th>
                     <th>
-                        {{ trans('cruds.ticket.fields.priority') }}
+                        {{ trans('Priority') }}
                     </th>
                     <th>
-                        {{ trans('cruds.ticket.fields.category') }}
+                        {{ trans('Crategory') }}
+                    </th>
+                    <th>
+                        {{ trans('Created') }}
+                    </th>
+                    <th>
+                        {{ trans('Updated') }}
+                    </th>
+                    <th>
+                        {{ trans('Deadline') }}
                     </th>
                     <th>
                         {{ trans('Report Name') }}
@@ -43,7 +52,7 @@
                         {{ trans('Report Email') }}
                     </th>
                     <th>
-                        {{ trans('Select Techinician') }}
+                        {{ trans('Show Devision') }}
                     </th>
                     <th>
                         &nbsp;
@@ -72,7 +81,7 @@ let filters = `
   </div>
   <div class="form-group mx-sm-3 mb-2">
     <select class="form-control" name="priority">
-      <option value="">All Priorities</option>
+      <option value="">All Priority</option>
       @foreach($priorities as $priority)
         <option value="{{ $priority->id }}"{{ request('priority') == $priority->id ? 'selected' : '' }}>{{ $priority->name }}</option>
       @endforeach
@@ -166,6 +175,37 @@ $('.card-body').on('change', 'select', function() {
       return '<span style="color:'+row.category_color+'">'+data+'</span>';
   } 
 },
+{ 
+  data: 'created_at',
+  name: 'created_at', 
+  render: function ( data, type, row) {
+    const date = new Date (data);
+
+    const year = date.getFullYear();
+    const month = String(date.getMonth() + 1).padStart(2, '0');
+    const day = String(date.getDate()).padStart(2, '0');
+
+    const formattedDate = `${year}-${month}-${day}`;
+
+      return '<span style="color:'+row.created_at+'">'+formattedDate +'</span>';
+  } 
+},
+{ 
+  data: 'updated_at', 
+  name: 'updated_at', 
+  render: function ( data, type, row) {
+      return '<span style="color:'+row.updated_at+'">'+data+'</span>';
+  } 
+},
+{ 
+  data: 'deadline', 
+  name: 'deadline', 
+  render: function ( data, type, row) {
+      return '<span style="color:'+row.deadline+'">'+data+'</span>';
+  } 
+},
+
+
 { data: 'author_name', name: 'author_name' },
 { data: 'author_email', name: 'author_email' },
 { data: 'assigned_to_user_name', name: 'assigned_to_user.name' },

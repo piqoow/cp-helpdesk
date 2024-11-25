@@ -20,7 +20,7 @@
                             <div class="card text-white bg-primary">
                                 <div class="card-body pb-3">
                                     <div class="text-value">{{ number_format($totalTickets) }}</div>
-                                    <div>Total tickets</div>
+                                    <div>Total Tickets</div>
                                     <br />
                                 </div>
                             </div>

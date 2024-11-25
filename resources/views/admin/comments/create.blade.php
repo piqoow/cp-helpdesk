@@ -35,7 +35,7 @@
                 </p>
             </div>
             <div class="form-group {{ $errors->has('author_email') ? 'has-error' : '' }}">
-                <label for="author_email">{{ trans('Report Name') }}</label>
+                <label for="author_email">{{ trans('Report Email') }}</label>
                 <input type="text" id="author_email" name="author_email" class="form-control" value="{{ old('author_email', isset($comment) ? $comment->author_email : '') }}" required>
                 @if($errors->has('author_email'))
                     <em class="invalid-feedback">
@@ -47,7 +47,7 @@
                 </p>
             </div>
             <div class="form-group {{ $errors->has('user_id') ? 'has-error' : '' }}">
-                <label for="user">{{ trans('cruds.comment.fields.user') }}</label>
+                <label for="user">{{ trans('Select Devision') }}</label>
                 <select name="user_id" id="user" class="form-control select2">
                     @foreach($users as $id => $user)
                         <option value="{{ $id }}" {{ (isset($comment) && $comment->user ? $comment->user->id : old('user_id')) == $id ? 'selected' : '' }}>{{ $user }}</option>

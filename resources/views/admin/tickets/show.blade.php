@@ -99,7 +99,7 @@
                     </tr>
                     <tr>
                         <th>
-                            {{ trans('Select Techinician') }}
+                            {{ trans('Show Devison') }}
                         </th>
                         <td>
                             {{ $ticket->assigned_to_user->name ?? '' }}
@@ -110,7 +110,7 @@
                             {{ trans('cruds.ticket.fields.comments') }}
                         </th>
                         <td>
-                            @forelse ($ticket->comments as $comment)
+                            @forelse ($ticket->comments as $comment )
                                 <div class="row">
                                     <div class="col">
                                         <p class="font-weight-bold"><a href="mailto:{{ $comment->author_email }}">{{ $comment->author_name }}</a> ({{ $comment->created_at }})</p>
@@ -132,7 +132,7 @@
                                     <label for="comment_text">Leave a comment</label>
                                     <textarea class="form-control" id="comment_text" name="comment_text" rows="3" required></textarea>
                                 </div>
-                                <fon type="submit" class="btn btn-primary">@lang('global.submit')</fon>
+                                <button type="submit" class="btn btn-primary">@lang('global.submit')</button>
                             </form>
                         </td>
                     </tr>
@@ -142,7 +142,7 @@
         <a class="btn btn-default my-2" href="{{ route('admin.tickets.index') }}">
             {{ trans('global.back_to_list') }}
         </a>
-
+    
         <a href="{{ route('admin.tickets.edit', $ticket->id) }}" class="btn btn-primary">
             @lang('global.edit') @lang('cruds.ticket.title_singular')
         </a>
