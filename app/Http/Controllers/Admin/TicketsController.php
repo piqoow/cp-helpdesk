@@ -128,15 +128,24 @@ class TicketsController extends Controller
     }
 
     public function store(StoreTicketRequest $request)
-    {
-        $ticket = Ticket::create($request->all());
+{
+    // Ambil deadline dari prioritas yang dipilih
+    $priority = Priority::find($request->priority_id);
+    $deadlineDays = $priority->deadline; // Misalkan ini adalah field yang menyimpan jumlah hari
 
-        foreach ($request->input('attachments', []) as $file) {
-            $ticket->addMedia(storage_path('tmp/uploads/' . $file))->toMediaCollection('attachments');
-        }
+    // Hitung tanggal deadline
+    $deadline = now()->addDays($deadlineDays);
 
-        return redirect()->route('admin.tickets.index');
+    // Buat tiket baru dengan deadline yang sudah dihitung
+    $ticket = Ticket::create(array_merge($request->all(), ['deadline' => $deadline]));
+
+    // Menambahkan media/attachment jika ada
+    foreach ($request->input('attachments', []) as $file) {
+        $ticket->addMedia(storage_path('tmp/uploads/' . $file))->toMediaCollection('attachments');
     }
+
+    return redirect()->route('admin.tickets.index')->with('success', 'Tiket berhasil dibuat.');
+}
 
     public function edit(Ticket $ticket)
     {

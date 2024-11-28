@@ -34,6 +34,18 @@
                     {{ trans('cruds.priority.fields.color_helper') }}
                 </p>
             </div>
+            <div class="form-group {{ $errors->has('deadline') ? 'has-error' : '' }}">
+                <label for="deadline">{{ trans('Deadline') }}</label>
+                <input type="text" id="deadline" deadline="deadline" class="form-control" value="{{ old('deadline', isset($priority) ? $priority->deadline : '') }}" required>
+                @if($errors->has('deadline'))
+                    <em class="invalid-feedback">
+                        {{ $errors->first('deadline') }}
+                    </em>
+                @endif
+                <p class="helper-block">
+                    {{ trans('cruds.priority.fields.name_helper') }}
+                </p>
+            </div>
             <div>
                 <input class="btn btn-danger" type="submit" value="{{ trans('global.save') }}">
             </div>

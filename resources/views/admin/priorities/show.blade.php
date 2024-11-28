@@ -32,6 +32,12 @@
                         </th>
                         <td style="background-color:{{ $priority->color ?? '#FFFFFF' }}"></td>
                     </tr>
+                    <th>
+                            {{ trans('Deadline') }}
+                        </th>
+                        <td>
+                            {{ $priority->deadline }}
+                        </td>
                 </tbody>
             </table>
             <a style="margin-top:20px;" class="btn btn-default" href="{{ url()->previous() }}">

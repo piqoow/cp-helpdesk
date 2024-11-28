@@ -39,6 +39,7 @@ class Ticket extends Model implements HasMedia
         'category_id',
         'author_name',
         'author_email',
+        'deadline',
         'assigned_to_user_id',
     ];
 

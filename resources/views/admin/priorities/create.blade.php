@@ -10,7 +10,7 @@
         <form action="{{ route("admin.priorities.store") }}" method="POST" enctype="multipart/form-data">
             @csrf
             <div class="form-group {{ $errors->has('name') ? 'has-error' : '' }}">
-                <label for="name">{{ trans('cruds.priority.fields.name') }}*</label>
+                <label for="name">{{ trans('cruds.priority.fields.name') }}</label>
                 <input type="text" id="name" name="name" class="form-control" value="{{ old('name', isset($priority) ? $priority->name : '') }}" required>
                 @if($errors->has('name'))
                     <em class="invalid-feedback">
@@ -31,6 +31,18 @@
                 @endif
                 <p class="helper-block">
                     {{ trans('cruds.priority.fields.color_helper') }}
+                </p>
+            </div>
+            <div class="form-group {{ $errors->has('deadline') ? 'has-error' : '' }}">
+                <label for="deadline">{{ trans('Deadline') }}</label>
+                <input type="text" id="deadline" name="deadline" class="form-control" value="{{ old('deadline', isset($priority) ? $priority->deadline : '') }}" required>
+                @if($errors->has('deadline'))
+                    <em class="invalid-feedback">
+                        {{ $errors->first('deadline') }}
+                    </em>
+                @endif
+                <p class="helper-block">
+                    {{ trans('cruds.priority.fields.name_helper') }}
                 </p>
             </div>
             <div>

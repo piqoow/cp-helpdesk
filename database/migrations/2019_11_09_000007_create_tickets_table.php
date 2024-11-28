@@ -1,5 +1,3 @@
-<?php
-
 use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Support\Facades\Schema;
@@ -18,6 +16,9 @@ class CreateTicketsTable extends Migration
             $table->string('author_name')->nullable();
 
             $table->string('author_email')->nullable();
+
+            // Menambahkan kolom deadline
+            $table->date('deadline')->nullable(); // Kolom untuk menyimpan tanggal deadline
 
             $table->timestamps();
 
