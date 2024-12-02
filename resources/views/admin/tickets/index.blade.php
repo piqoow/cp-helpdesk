@@ -142,6 +142,7 @@ $('.card-body').on('change', 'select', function() {
         'status'  : searchParams.get('status'),
         'priority': searchParams.get('priority'),
         'category': searchParams.get('category')
+        // 'deadline': searchParams.get('deadline')
       }
     },
     columns: [
