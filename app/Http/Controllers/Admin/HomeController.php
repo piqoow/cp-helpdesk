@@ -14,13 +14,16 @@ class HomeController
 
         $totalTickets = Ticket::count();
         $openTickets = Ticket::whereHas('status', function($query) {
-            $query->whereName('Trouble');
+            $query->whereName('Pending');
+        })->count();
+        $progressTickets = Ticket::whereHas('status', function($query) {
+            $query->whereName('Process');
         })->count();
         $closedTickets = Ticket::whereHas('status', function($query) {
             $query->whereName('Success');
         })->count();
         
 
-        return view('home', compact('totalTickets', 'openTickets', 'closedTickets'));
+        return view('home', compact('totalTickets', 'openTickets', 'progressTickets', 'closedTickets'));
     }
 }
