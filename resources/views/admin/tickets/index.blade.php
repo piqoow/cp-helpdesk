@@ -52,7 +52,7 @@
                         {{ trans('Report Email') }}
                     </th>
                     <th>
-                        {{ trans('Show Devision') }}
+                        {{ trans('Division') }}
                     </th>
                     <th>
                         &nbsp;

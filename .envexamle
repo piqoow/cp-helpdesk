@@ -3,15 +3,16 @@ APP_ENV=local
 APP_KEY=base64:qj5vxbGuM+wxsKifvfAVoquTd05+MTNOGV9yyWUVQzM=
 APP_DE =true
 APP_URL=http://localhost
+# APP_URL=http://10.2.1.167
 
 LOG_CHANNEL=stack
 
 DB_CONNECTION=mysql
-DB_HOST=127.0.0.1
+DB_HOST=110.0.100.135
 DB_PORT=3306
 DB_DATABASE=hlpdesk
-DB_USERNAME=root
-DB_PASSWORD=
+DB_USERNAME=rnd
+DB_PASSWORD=rahasia123
 
 BROADCAST_DRIVER=log
 CACHE_DRIVER=file
@@ -24,10 +25,10 @@ REDIS_PASSWORD=null
 REDIS_PORT=6379
 
 MAIL_DRIVER=smtp
-MAIL_HOST=smtp-relay.sendinblue.com
+MAIL_HOST=smtp.mail.yahoo.com
 MAIL_PORT=587
-MAIL_USERNAME=5410b1003@smtp-brevo.com
-MAIL_PASSWORD=5FgBKbVDsk0Z4zxH
+MAIL_USERNAME=cs.ho@centreparkcorp.com
+MAIL_PASSWORD=sqzqhvsrzwyoatoy
 MAIL_ENCRYPTION=tls
 MAIL_FROM_ADDRESS=your_email@example.com
 MAIL_FROM_NAME="${APP_NAME}"

@@ -33,7 +33,7 @@
                     {{ trans('cruds.ticket.fields.content_helper') }}
                 </p>
             </div>
-            <div class="form-group {{ $errors->has('attachments') ? 'has-error' : '' }}">
+            <!-- <div class="form-group {{ $errors->has('attachments') ? 'has-error' : '' }}">
                 <label for="attachments">{{ trans('Report Image') }}</label>
                 <div class="needsclick dropzone" id="attachments-dropzone">
 
@@ -46,7 +46,7 @@
                 <p class="helper-block">
                     {{ trans('cruds.ticket.fields.attachments_helper') }}
                 </p>
-            </div>
+            </div> -->
             <div class="form-group {{ $errors->has('status_id') ? 'has-error' : '' }}">
                 <label for="status">{{ trans('cruds.ticket.fields.status') }}</label>
                 <select name="status_id" id="status" class="form-control select2" required>

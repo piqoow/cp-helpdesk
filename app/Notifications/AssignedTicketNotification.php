@@ -47,6 +47,6 @@ class AssignedTicketNotification extends Notification
                     ->action('View ticket', route('admin.tickets.show', $this->ticket->id))
                     ->line('Thank you')
                     ->line(config('') . 'PT.Centre Park Team')
-                    ->salutation(salut ation: '');
+                    ->salutation(salutation: '');
     }
 }
